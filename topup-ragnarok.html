@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top-Up Ragnarok Mobile</title>
+    <link rel="stylesheet" href="topup-ragnarok.css" />
+  </head>
+  <body>
+    <section class="form-section">
+      <h2>Top-Up Ragnarok Mobile</h2>
+      <form id="topup-form">
+        <div class="input-group">
+          <label for="player-id">Character ID atau Nama Karakter</label>
+          <input
+            type="text"
+            id="player-id"
+            name="player-id"
+            placeholder="Contoh: Odin123456"
+            required
+          />
+        </div>
+
+        <h2>Pilih Jumlah Crystal</h2>
+        <div class="diamond-grid">
+          <label class="diamond-card">
+            <input type="radio" name="crystal" value="60" />
+            <p class="diamond-qty">60 Crystal</p>
+            <p class="bonus">Tanpa Bonus</p>
+            <p class="price">Rp12.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="crystal" value="300" />
+            <p class="diamond-qty">300 Crystal</p>
+            <p class="bonus">+ Bonus 20</p>
+            <p class="price">Rp55.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="crystal" value="648" />
+            <p class="diamond-qty">648 Crystal</p>
+            <p class="bonus">+ Bonus 50</p>
+            <p class="price">Rp110.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="crystal" value="1280" />
+            <p class="diamond-qty">1280 Crystal</p>
+            <p class="bonus">+ Bonus 100</p>
+            <p class="price">Rp210.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="crystal" value="3280" />
+            <p class="diamond-qty">3280 Crystal</p>
+            <p class="bonus">+ Bonus 300</p>
+            <p class="price">Rp520.000</p>
+          </label>
+        </div>
+
+        <h2>Pilih Metode Pembayaran</h2>
+        <div class="payment-grid">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="gopay" />
+            <img src="Gopay.png" alt="GoPay" />
+            <span>GoPay</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="dana" />
+            <img src="Dana.png" alt="DANA" />
+            <span>DANA</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="ovo" />
+            <img src="ovo.webp" alt="OVO" />
+            <span>OVO</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="shopeepay" />
+            <img src="Shopeepay.png" alt="ShopeePay" />
+            <span>ShopeePay</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="bank" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3313/3313891.png"
+              alt="Transfer Bank"
+            />
+            <span>Transfer Bank</span>
+          </label>
+        </div>
+
+        <div class="submit-section">
+          <button type="submit">Bayar Sekarang</button>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      const voucherCards = document.querySelectorAll(".diamond-card");
+      voucherCards.forEach((card) => {
+        const input = card.querySelector('input[type="radio"]');
+        card.addEventListener("click", () => {
+          input.checked = true;
+          voucherCards.forEach((c) => c.classList.remove("selected"));
+          card.classList.add("selected");
+        });
+      });
+
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      paymentOptions.forEach((option) => {
+        const input = option.querySelector('input[type="radio"]');
+        option.addEventListener("click", () => {
+          input.checked = true;
+          paymentOptions.forEach((o) => o.classList.remove("selected"));
+          option.classList.add("selected");
+        });
+      });
+
+      const waNumber = "6285273319447";
+
+      document
+        .getElementById("topup-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const playerId = document.getElementById("player-id").value;
+          const voucher = document.querySelector(
+            'input[name="voucher"]:checked'
+          );
+          const payment = document.querySelector(
+            'input[name="payment"]:checked'
+          );
+
+          if (!voucher || !payment) {
+            alert("Silakan pilih jumlah voucher dan metode pembayaran.");
+            return;
+          }
+
+          const message = `Halo Admin, saya ingin top-up Ragnarok:\n\nPlayer ID: ${playerId}\nJumlah: ${voucher.value}\nPembayaran: ${payment.value}`;
+          const encodedMessage = encodeURIComponent(message);
+          const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+          window.open(waLink, "_blank");
+        });
+    </script>
+  </body>
+</html>

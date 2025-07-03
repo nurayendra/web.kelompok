@@ -1,0 +1,105 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f3ff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.tentang-container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.tentang-container h1 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+.tentang-container p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.tentang-container h3 {
+  margin-bottom: 15px;
+  color: #0d47a1;
+}
+
+.tentang-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tentang-container li {
+  margin-bottom: 8px;
+}
+
+.tentang-container .kembali {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #0d47a1;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tentang-container .kembali:hover {
+  background-color: #1565c0;
+}
+
+.tentang-container p {
+  text-align: justify;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.highlight {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0d47a1;
+  margin-top: -10px;
+}
+
+ul.misi, ul.alasan, ul.sosmed {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+ul.misi li, ul.alasan li, ul.sosmed li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.keamanan, .terima-kasih, .salam {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.kembali {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #0d47a1;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.kembali:hover {
+  background-color: #1565c0;
+}

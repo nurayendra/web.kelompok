@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WarungGAME Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      src="gambar atas 4.jpg"
+      alt="Dekorasi Samping"
+      class="gambar-samping-panjang"
+    />
+    <div class="sidebar">
+      <ul>
+        <li class="active" onclick="scrollToTop()"><span>🏠</span> Home</li>
+        <li><span>📋</span> Transaksi</li>
+        <li
+          onclick="document.getElementById('promo').scrollIntoView({ behavior: 'smooth' })"
+        >
+          <span>🎁</span> Promo
+        </li>
+
+        <li><span>🎉</span> Hadiahku</li>
+        <a href="bantuan.html" class="btn-bantuan">❓ Bantuan</a>
+        <a href="tentang.html" class="btn-tentang">ℹ️ Tentang Kami</a>
+      </ul>
+    </div>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+
+    <main class="main-content">
+      <div class="slider">
+        <div class="slide active">
+          \
+          <img src="banner1.jpg" alt="Banner 1" />
+        </div>
+        <div class="slide">
+          <img src="banner2.webp" alt="Banner 2" />
+        </div>
+        <div class="slide">
+          <img src="banner3.webp" alt="Banner 3" />
+        </div>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="category-buttons">
+        <button
+          onclick="document.getElementById('topup-populer').scrollIntoView({ behavior: 'smooth' })"
+        >
+          🔥 Lagi Populer
+        </button>
+        <button
+          onclick="document.getElementById('topup-populer').scrollIntoView({ behavior: 'smooth' })"
+        >
+          🚀 Top Up Langsung
+        </button>
+        <button>🌟 Baru Rilis</button>
+        <button
+          onclick="alert('Fitur Top Up Login belum tersedia untuk saat ini.')"
+        >
+          🔐 Top Up Login
+        </button>
+        <button
+          onclick="document.getElementById('voucher').scrollIntoView({ behavior: 'smooth' })"
+        >
+          🎫 Voucher
+        </button>
+        <button onclick="alert('Fitur Pulsa belum tersedia untuk saat ini.')">
+          📱 Pulsa
+        </button>
+        <button
+          onclick="alert('Fitur Entertainment belum tersedia untuk saat ini.')"
+        >
+          🎮 Entertainment
+        </button>
+      </div>
+
+      <section class="hero" id="hero">
+        <div class="container">
+          <h2>Top-up Game Favoritmu dengan Mudah dan Cepat!</h2>
+          <p>Pilih game, masukkan ID, bayar, dan item langsung masuk.</p>
+        </div>
+      </section>
+      <section class="promo-section container" id="promo">
+        <h3>🎁 Promo Menarik</h3>
+        <div class="promo-grid">
+          <div class="promo-card">
+            <img src="MLBB.webp" alt="Promo MLBB" />
+            <div class="promo-info">
+              <h4>Diskon 70% MLBB</h4>
+              <p>Berlaku s/d 31 Juli 2025</p>
+              <a href="topup-ml.html"><button>Lihat Promo</button></a>
+            </div>
+          </div>
+          <div class="promo-card">
+            <img src="FF.jpg" alt="Promo FF" />
+            <div class="promo-info">
+              <h4>Bonus Diamond FF</h4>
+              <p>Top up min. 100 diamond</p>
+              <a href="topup-ff.html"><button>Cek Sekarang</button></a>
+            </div>
+          </div>
+          <div class="promo-card">
+            <img src="CODM.png" alt="Promo CODM" />
+            <div class="promo-info">
+              <h4>Cashback 20% CODM</h4>
+              <p>Untuk pengguna baru</p>
+              <a href="topup-cod.html"><button>Dapatkan</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="topup-populer" class="products container">
+        <h3>Top-Up Populer</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="MLBB.webp" alt="Mobile Legends" />
+            <h4>Mobile Legends</h4>
+            <a href="topup-ml.html" target="_blank"
+              ><button>Top-Up Sekarang</button></a
+            >
+          </div>
+          <div class="product-card">
+            <img src="FF.jpg" alt="Free Fire" />
+            <h4>Free Fire</h4>
+            <a href="topup-ff.html" target="_blank"
+              ><button>Top-Up Sekarang</button></a
+            >
+          </div>
+          <div class="product-card">
+            <img src="PUBG.jpg" alt="PUBG Mobile" />
+            <h4>PUBG Mobile</h4>
+            <a href="topup-pubg.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="Genshin.webp" alt="Genshin Impact" />
+            <h4>Genshin Impact</h4>
+            <a href="topup-genshin.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="valorant.jpg" alt="Valorant" />
+            <h4>Valorant</h4>
+            <a href="topup-valorant.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="CODM.png" alt="COD Mobile" />
+            <h4>Call of Duty Mobile</h4>
+            <a href="topup-cod.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="domino.jpg" alt="Higgs Domino" />
+            <h4>Higgs Domino</h4>
+            <a href="topup-domino.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="aov.jpg" alt="Arena of Valor" />
+            <h4>Arena of Valor</h4>
+            <a href="topup-aov.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="roblox.jpg" alt="Roblox" />
+            <h4>Roblox</h4>
+            <a href="topup-roblox.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="lol.jpg" alt="League of Legends: Wild Rift" />
+            <h4>LoL: Wild Rift</h4>
+            <a href="topup-lol.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="ragnarok.jpg" alt="Ragnarok X" />
+            <h4>Ragnarok X: Next Gen</h4>
+            <a href="topup-ragnarok.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="coc.webp" alt="Clash of Clans" />
+            <h4>Clash of Clans</h4>
+            <a href="topup-coc.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="fcmobile.webp" alt="FIFA Mobile" />
+            <h4>FIFA Mobile</h4>
+            <a href="topup-fcmobile.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="minecraft.png" alt="Minecraft" />
+            <h4>Minecraft</h4>
+            <a href="topup-minecraft.html"><button>Top-Up Sekarang</button></a>
+          </div>
+          <div class="product-card">
+            <img src="honkai.webp" alt="Honkai Star Rail" />
+            <h4>Honkai: Star Rail</h4>
+            <a href="topup-honkai.html"><button>Top-Up Sekarang</button></a>
+          </div>
+        </div>
+      </section>
+      <section class="voucher-section container" id="voucher">
+        <h3>🎫 Voucher</h3>
+        <div class="voucher-empty">
+          <img src="voucher1.jpg" alt="Belum tersedia" />
+          <p>
+            Voucher belum tersedia untuk saat ini. Nantikan update terbaru dari
+            kami!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 WarungGAME Clone. All rights reserved.</p>
+        <p>
+          Dikembangkan oleh: Rizky Nurayendra, Wawan Adi Candra, dan M. Fadil
+          Pratama.
+        </p>
+        <p>
+          Butuh bantuan? Hubungi CS:
+          <a href="https://wa.me/6285273319447" target="_blank"
+            >0852-7331-9447</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const heroSection = document.getElementById("hero");
+      const images = [
+        "PUBG-branda.jpg",
+        "Gensin-branda.webp",
+        "Valoran-branda.jpg",
+      ];
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % images.length;
+        heroSection.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('${images[index]}')`;
+      }, 3000);
+    </script>
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          dots[i].classList.remove("active");
+        });
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+
+      setInterval(() => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+      }, 3000);
+    </script>
+  </body>
+</html>

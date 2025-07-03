@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top-Up Arena of Valor</title>
+    <link rel="stylesheet" href="topup-aov.css" />
+  </head>
+  <body>
+    <section class="form-section">
+      <h2>Top-Up Arena of Valor</h2>
+      <form id="topup-form">
+        <div class="input-group">
+          <label for="player-id">Player ID</label>
+          <input
+            type="text"
+            id="player-id"
+            name="player-id"
+            placeholder="Contoh: 1234567890"
+            required
+          />
+        </div>
+
+        <h2>Pilih Jumlah Voucher</h2>
+        <div class="diamond-grid">
+          <label class="diamond-card">
+            <input type="radio" name="voucher" value="40" />
+            <p class="diamond-qty">40 Voucher</p>
+            <p class="bonus">Tanpa Bonus</p>
+            <p class="price">Rp10.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="voucher" value="90" />
+            <p class="diamond-qty">90 Voucher</p>
+            <p class="bonus">+ Bonus 5</p>
+            <p class="price">Rp20.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="voucher" value="185" />
+            <p class="diamond-qty">185 Voucher</p>
+            <p class="bonus">+ Bonus 10</p>
+            <p class="price">Rp40.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="voucher" value="375" />
+            <p class="diamond-qty">375 Voucher</p>
+            <p class="bonus">+ Bonus 25</p>
+            <p class="price">Rp75.000</p>
+          </label>
+
+          <label class="diamond-card">
+            <input type="radio" name="voucher" value="765" />
+            <p class="diamond-qty">765 Voucher</p>
+            <p class="bonus">+ Bonus 50</p>
+            <p class="price">Rp140.000</p>
+          </label>
+        </div>
+
+        <h2>Pilih Metode Pembayaran</h2>
+        <div class="payment-grid">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="gopay" />
+            <img src="Gopay.png" alt="GoPay" />
+            <span>GoPay</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="dana" />
+            <img src="Dana.png" alt="DANA" />
+            <span>DANA</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="ovo" />
+            <img src="ovo.webp" alt="OVO" />
+            <span>OVO</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="shopeepay" />
+            <img src="Shopeepay.png" alt="ShopeePay" />
+            <span>ShopeePay</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="bank" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3313/3313891.png"
+              alt="Transfer Bank"
+            />
+            <span>Transfer Bank</span>
+          </label>
+        </div>
+
+        <div class="submit-section">
+          <button type="submit">Bayar Sekarang</button>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      const voucherCards = document.querySelectorAll(".diamond-card");
+      voucherCards.forEach((card) => {
+        const input = card.querySelector('input[type="radio"]');
+        card.addEventListener("click", () => {
+          input.checked = true;
+          voucherCards.forEach((c) => c.classList.remove("selected"));
+          card.classList.add("selected");
+        });
+      });
+
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      paymentOptions.forEach((option) => {
+        const input = option.querySelector('input[type="radio"]');
+        option.addEventListener("click", () => {
+          input.checked = true;
+          paymentOptions.forEach((o) => o.classList.remove("selected"));
+          option.classList.add("selected");
+        });
+      });
+
+      const waNumber = "6285273319447";
+
+      document
+        .getElementById("topup-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const playerId = document.getElementById("player-id").value;
+          const voucher = document.querySelector(
+            'input[name="voucher"]:checked'
+          );
+          const payment = document.querySelector(
+            'input[name="payment"]:checked'
+          );
+
+          if (!voucher || !payment) {
+            alert("Silakan pilih jumlah voucher dan metode pembayaran.");
+            return;
+          }
+
+          const message = `Halo Admin, saya ingin top-up AOV:\n\nPlayer ID: ${playerId}\nJumlah: ${voucher.value}\nPembayaran: ${payment.value}`;
+          const encodedMessage = encodeURIComponent(message);
+          const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+          window.open(waLink, "_blank");
+        });
+    </script>
+  </body>
+</html>

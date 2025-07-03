@@ -1,0 +1,318 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.diamond-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.diamond-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.payment-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.payment-option img {
+  height: 50px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.payment-option input[type="radio"] {
+  display: none;
+}
+
+.payment-option img {
+  height: 40px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.payment-option span {
+  font-weight: bold;
+  color: #333;
+}
+
+.payment-option:hover {
+  border-color: #1976d2;
+}
+
+.payment-option input[type="radio"]:checked + img + span {
+  color: #1976d2;
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-section button {
+  background-color: #ffc107;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-section button:hover {
+  background-color: #ffca28;
+}
+
+.diamond-card {
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.diamond-card:hover {
+  border-color: #1976d2;
+  transform: translateY(-3px);
+}
+
+.diamond-qty {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.bonus {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0;
+}
+
+.price {
+  font-size: 15px;
+  color: #555;
+}
+
+.price span {
+  color: #e53935;
+  font-weight: bold;
+}
+
+.diamond-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.diamond-card {
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.diamond-card:hover {
+  border-color: #2196f3;
+}
+
+.diamond-card input[type="radio"] {
+  display: none;
+}
+
+.diamond-card input[type="radio"]:checked ~ p {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.diamond-card.selected {
+  border-color: #1976d2;
+}
+
+.diamond-qty {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bonus {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 15px;
+  color: #555;
+}
+
+.price span {
+  color: #e53935;
+  font-weight: bold;
+}
+
+.form-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.input-group input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #ffeb3b;
+}
+
+.payment-option.selected,
+.diamond-card.selected {
+  border: 2px solid #1976d2;
+}
+
+.payment-option input[type="radio"],
+.diamond-card input[type="radio"] {
+  display: none;
+}
+
+.diamond-card,
+.payment-option {
+  transition: all 0.3s ease;
+}
+
+.diamond-card:hover,
+.payment-option:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-section button {
+  background-color: #ffc107;
+  padding: 14px 40px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.submit-section button {
+  background: linear-gradient(90deg, #fbc02d, #ffeb3b);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 235, 59, 0.4);
+}
+
+.submit-section button:hover {
+  background: linear-gradient(90deg, #ffeb3b, #fbc02d);
+  transform: scale(1.05);
+}
+h2 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 26px;
+  color: #ffeb3b;
+}
